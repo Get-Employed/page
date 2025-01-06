@@ -82,7 +82,8 @@ const about = {
                 achievements: [
                     <>Working on the active Indian Navy Tech Projects</>,
                 ],
-                images: [ // optional: leave the array empty if you don't want to display images
+                images: [
+                    
                 ]
             },
             {
@@ -93,7 +94,14 @@ const about = {
                     <>Developed an innovative concept of an LLM model, which acts as a tool for automating tasks for software engineering.</>,
                     <>Led a cross-functional team to launch a new product line.</>
                 ],
-                images: [ ]
+                images: [
+                    {
+                        src: '/images/projects/project-01/cover-01.jpg',
+                        alt: 'Once UI Project',
+                        width: 16,
+                        height: 9
+                    }
+                ]
             },
             {
                 company: 'IBM Qiskit',
@@ -150,13 +158,26 @@ const about = {
                 title: 'Figma',
                 description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
                 // optional: leave the array empty if you don't want to display images
-                images: [ ]
+                images: [
+                    {
+                        src: '/images/projects/project-01/cover-02.jpg',
+                        alt: 'Project image',
+                        width: 16,
+                        height: 9
+                    },
+                ]
             },
             {
                 title: 'React and Next.js',
                 description: <>Building next gen apps with Next.js.</>,
                 // optional: leave the array empty if you don't want to display images
                 images: [
+                    {
+                        src: '/images/projects/project-01/cover-03.jpg',
+                        alt: 'Project image',
+                        width: 16,
+                        height: 9
+                    },
                 ]
             },
             {
