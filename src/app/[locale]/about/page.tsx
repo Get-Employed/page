@@ -253,12 +253,11 @@ export default function About(
                                         <Flex
                                             as="ul"
                                             direction="column" gap="16">
-                                            {experience.achievements.map((achievement: string, index: any) => (
+                                            {experience.achievements.map((index: any) => (
                                                 <Text
                                                     as="li"
                                                     variant="body-default-m"
                                                     key={`${experience.company}-${index}`}>
-                                                    {achievement}
                                                 </Text>
                                             ))}
                                         </Flex>
