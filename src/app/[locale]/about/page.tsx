@@ -1,76 +1,74 @@
 import { Avatar, Button, Flex, Heading, Icon, IconButton, SmartImage, Tag, Text } from '@/once-ui/components';
 import { baseURL, renderContent } from '@/app/resources';
 import TableOfContents from '@/components/about/TableOfContents';
-import styles from '@/components/about/about.module.scss';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import styles from '@/components/about/about.module.scss'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 
-export async function generateStaticParams() {
-    // Define your locales here
-    const locales = ['en', 'es', 'fr'];
-    return locales.map((locale) => ({ locale }));
-}
-
 export async function generateMetadata(
-    { params: { locale } }: { params: { locale: string } }
+    {params: {locale}}: { params: { locale: string }}
 ) {
-    setRequestLocale(locale);
     const t = await getTranslations();
-    const { person, about, social } = renderContent(t);
-    const title = about.title;
-    const description = about.description;
-    const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+    const {person, about, social } = renderContent(t);
+	const title = about.title;
+	const description = about.description;
+	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+    // Await the requestLocale function and provide a fallback
+    const requestLocale = await unstable_setRequestLocale(locale) || 'en';
 
-    return {
-        title,
-        description,
-        openGraph: {
-            title,
-            description,
-            type: 'website',
-            url: `https://${baseURL}/${locale}/about`,
-            images: [
-                {
-                    url: ogImage,
-                    alt: title,
-                },
-            ],
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title,
-            description,
-            images: [ogImage],
-        },
-    };
+	return {
+		title,
+		description,
+		openGraph: {
+			title,
+			description,
+			type: 'website',
+			url: `https://${baseURL}/${requestLocale}/about`,
+			images: [
+				{
+					url: ogImage,
+					alt: title,
+				},
+			],
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title,
+			description,
+			images: [ogImage],
+		},
+        locale: requestLocale //Return the locale.
+	};
 }
 
-export default function About({ params: { locale } }: { params: { locale: string } }) {
-    setRequestLocale(locale);
+export default function About(
+    { params: {locale}}: { params: { locale: string }}
+) {
+    const requestLocale = await unstable_setRequestLocale(locale) || 'en';
     const t = useTranslations();
-    const { person, about, social } = renderContent(t);
+    const {person, about, social } = renderContent(t);
     const structure = [
-        {
+        { 
             title: about.intro.title,
             display: about.intro.display,
             items: []
         },
-        {
+        { 
             title: about.work.title,
             display: about.work.display,
             items: about.work.experiences.map(experience => experience.company)
         },
-        {
+        { 
             title: about.studies.title,
             display: about.studies.display,
             items: about.studies.institutions.map(institution => institution.name)
         },
-        {
+        { 
             title: about.technical.title,
             display: about.technical.display,
             items: about.technical.skills.map(skill => skill.title)
         },
-    ];
+    ]
     return (
         <Flex
             fillWidth maxWidth="m"
@@ -97,7 +95,7 @@ export default function About({ params: { locale } }: { params: { locale: string
                     }),
                 }}
             />
-            {about.tableOfContent.display && (
+            { about.tableOfContent.display && (
                 <Flex
                     style={{ left: '0', top: '50%', transform: 'translateY(-50%)' }}
                     position="fixed"
@@ -111,23 +109,23 @@ export default function About({ params: { locale } }: { params: { locale: string
             <Flex
                 fillWidth
                 mobileDirection="column" justifyContent="center">
-                {about.avatar.display && (
+                { about.avatar.display && (
                     <Flex
                         className={styles.avatar}
                         minWidth="160" paddingX="l" paddingBottom="xl" gap="m"
                         flex={3} direction="column" alignItems="center">
                         <Avatar
                             src={person.avatar}
-                            size="xl" />
+                            size="xl"/>
                         <Flex
                             gap="8"
                             alignItems="center">
                             <Icon
                                 onBackground="accent-weak"
-                                name="globe" />
+                                name="globe"/>
                             {person.location}
                         </Flex>
-                        {person.languages.length > 0 && (
+                        { person.languages.length > 0 && (
                             <Flex
                                 wrap
                                 gap="8">
@@ -164,7 +162,7 @@ export default function About({ params: { locale } }: { params: { locale: string
                                 <Flex paddingLeft="12">
                                     <Icon
                                         name="calendar"
-                                        onBackground="brand-weak" />
+                                        onBackground="brand-weak"/>
                                 </Flex>
                                 <Flex
                                     paddingX="8">
@@ -174,7 +172,7 @@ export default function About({ params: { locale } }: { params: { locale: string
                                     href={about.calendar.link}
                                     data-border="rounded"
                                     variant="tertiary"
-                                    icon="chevronRight" />
+                                    icon="chevronRight"/>
                             </Flex>
                         )}
                         <Heading
@@ -200,14 +198,14 @@ export default function About({ params: { locale } }: { params: { locale: string
                                             prefixIcon={item.icon}
                                             label={item.name}
                                             size="s"
-                                            variant="tertiary" />
+                                            variant="tertiary"/>
                                     )
                                 ))}
                             </Flex>
                         )}
                     </Flex>
 
-                    {about.intro.display && (
+                    { about.intro.display && (
                         <Flex
                             direction="column"
                             textVariant="body-default-l"
@@ -216,7 +214,7 @@ export default function About({ params: { locale } }: { params: { locale: string
                         </Flex>
                     )}
 
-                    {about.work.display && (
+                    { about.work.display && (
                         <>
                             <Heading
                                 as="h2"
@@ -258,7 +256,7 @@ export default function About({ params: { locale } }: { params: { locale: string
                                         <Flex
                                             as="ul"
                                             direction="column" gap="16">
-                                            {experience.achievements.map((achievement: string, index: number) => (
+                                            {experience.achievements.map((achievement: string, index: any) => (
                                                 <Text
                                                     as="li"
                                                     variant="body-default-m"
@@ -283,7 +281,7 @@ export default function About({ params: { locale } }: { params: { locale: string
                                                             radius="m"
                                                             sizes={image.width.toString()}
                                                             alt={image.alt}
-                                                            src={image.src} />
+                                                            src={image.src}/>
                                                     </Flex>
                                                 ))}
                                             </Flex>
@@ -294,7 +292,7 @@ export default function About({ params: { locale } }: { params: { locale: string
                         </>
                     )}
 
-                    {about.studies.display && (
+                    { about.studies.display && (
                         <>
                             <Heading
                                 as="h2"
@@ -327,7 +325,7 @@ export default function About({ params: { locale } }: { params: { locale: string
                         </>
                     )}
 
-                    {about.technical.display && (
+                    { about.technical.display && (
                         <>
                             <Heading
                                 as="h2"
@@ -368,7 +366,7 @@ export default function About({ params: { locale } }: { params: { locale: string
                                                             radius="m"
                                                             sizes={image.width.toString()}
                                                             alt={image.alt}
-                                                            src={image.src} />
+                                                            src={image.src}/>
                                                     </Flex>
                                                 ))}
                                             </Flex>

@@ -1,5 +1,5 @@
 {
-	"name": "@once-ui-system/magic-portfolio",
+	"name": "basanth-portfolio",
 	"version": "0.2.0",
 	"scripts": {
 		"dev": "next dev",
@@ -32,9 +32,8 @@
 	},
 	"devDependencies": {
 		"@csstools/postcss-global-data": "^2.1.1",
-		"@types/cookie": "^0.6.0",
 		"@types/node": "^20",
-		"@types/react": "^18",
+		"@types/react": "^18.3.18",
 		"@types/react-dom": "^18",
 		"eslint": "^9.17.0",
 		"postcss-custom-media": "^10.0.7",
