@@ -1,21 +1,21 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-    firstName: 'Selene',
-    lastName:  'Yu',
+    firstName: 'VVS Basanth',
+    lastName:  'Pedapati',
     get name() {
         return `${this.firstName} ${this.lastName}`;
     },
-    role:      'Design Engineer',
+    role:      'Computer Science Engineer',
     avatar:    '/images/avatar.jpg',
-    location:  'Asia/Jakarta',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: ['English', 'Bahasa']  // optional: Leave the array empty if you don't want to display languages
+    location:  'Asia/Kolkata',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+    languages: ['English', 'Hindi', 'Telugu']  // optional: Leave the array empty if you don't want to display languages
 }
 
 const newsletter = {
     display: true,
     title: <>Subscribe to {person.firstName}'s Newsletter</>,
-    description: <>I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.</>
+    description: <>I occasionally write about Lifestyle, technology, and share thoughts on the intersection of innovation and engineering.</>
 }
 
 const social = [
@@ -24,22 +24,22 @@ const social = [
     {
         name: 'GitHub',
         icon: 'github',
-        link: 'https://github.com/once-ui-system/nextjs-starter',
+        link: 'https://github.com/vvs-basanth',
     },
     {
         name: 'LinkedIn',
         icon: 'linkedin',
-        link: 'https://www.linkedin.com/company/once-ui/',
+        link: 'https://www.linkedin.com/in/vvs-basanth/',
     },
-    {
-        name: 'X',
-        icon: 'x',
-        link: '',
-    },
+    // {
+    //     name: 'X',
+    //     icon: 'x',
+    //     link: '',
+    // },
     {
         name: 'Email',
         icon: 'email',
-        link: 'mailto:example@gmail.com',
+        link: 'mailto:vvs.pedapati@gmail.com',
     },
 ]
 
@@ -48,7 +48,7 @@ const home = {
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
     headline: <>Design engineer and builder</>,
-    subline: <>I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive<br/> user experiences. After hours, I build my own projects.</>
+    subline: <>I'm Basanth, a <InlineCode>Software Engineer</InlineCode>, where I build amazing<br/> things for the web. After hours, I teach programming.</>
 }
 
 const about = {
@@ -64,41 +64,61 @@ const about = {
     },
     calendar: {
         display: true,
-        link: 'https://cal.com'
+        link: 'https://calendar.notion.so/meet/vvsbasanth/m7k74lbz'
     },
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>Selene is a Jakarta-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. Her work spans digital interfaces, interactive experiences, and the convergence of design and technology.</>
+        description: <>Basanth is a India-based software engineer with a passion towards machine learning and transforming complex challenges into simple, elegant software solutions. His work spans digital interfaces, innovative experiences, and the convergence of innovation and technology.</>
     },
     work: {
         display: true, // set to false to hide this section
         title: 'Work Experience',
         experiences: [
             {
-                company: 'FLY',
-                timeframe: '2022 - Present',
-                role: 'Senior Design Engineer',
+                company: 'Indian Navy',
+                timeframe: '2024 - Present',
+                role: 'Machine Learning Scientist (B)',
                 achievements: [
-                    <>Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user engagement and 30% faster load times.</>,
-                    <>Spearheaded the integration of AI tools into design workflows, enabling designers to iterate 50% faster.</>
+                    <>Working on the active Indian Navy Tech Projects</>,
                 ],
                 images: [ // optional: leave the array empty if you don't want to display images
-                    {
-                        src: '/images/projects/project-01/cover-01.jpg',
-                        alt: 'Once UI Project',
-                        width: 16,
-                        height: 9
-                    }
                 ]
             },
             {
-                company: 'Creativ3',
-                timeframe: '2018 - 2022',
-                role: 'Lead Designer',
+                company: 'StellaX Technologies',
+                timeframe: '2022 - Present',
+                role: 'Founder',
                 achievements: [
-                    <>Developed a design system that unified the brand across multiple platforms, improving design consistency by 40%.</>,
-                    <>Led a cross-functional team to launch a new product line, contributing to a 15% increase in overall company revenue.</>
+                    <>Developed an innovative concept of an LLM model, which acts as a tool for automating tasks for software engineering.</>,
+                    <>Led a cross-functional team to launch a new product line.</>
+                ],
+                images: [ ]
+            },
+            {
+                company: 'IBM Qiskit',
+                timeframe: '2023 - 2024',
+                role: 'Quantum - Machine Learning Engineer',
+                achievements: [
+                    <>Developed an new machine learning algorithm and optimized the capabilities of Qiskit Framework and IBM - Quantum Computer.</>,
+                ],
+                images: [ ]
+            },
+            {
+                company: 'Goldman Sachs',
+                timeframe: '2023',
+                role: 'New Summer Analyst (intern)',
+                achievements: [
+                    <>Was part of a Reaseach team which was building a financial model and assisting senior bankers with deal execution.</>,
+                ],
+                images: [ ]
+            },
+            {
+                company: 'Defence Research and Development Organisation',
+                timeframe: '2023',
+                role: 'Machine Learning Engineer (Intern)',
+                achievements: [
+                    <>Was part of a team which does data preprocessing, model development and testing pipelines.</>
                 ],
                 images: [ ]
             }
@@ -109,13 +129,17 @@ const about = {
         title: 'Studies',
         institutions: [
             {
-                name: 'University of Jakarta',
-                description: <>Studied software engineering.</>,
+                name: 'Indian Institute of Sciences [ TATA Institute]',
+                description: <>MSc - Quantum Simulations and Computing</>,
             },
             {
-                name: 'Build the Future',
-                description: <>Studied online marketing and personal branding.</>,
-            }
+                name: 'Indian Institute of Technology - Madras [IIT Madras]',
+                description: <>BSc (Hons.) - Physics (Hons.).</>,
+            },
+            {
+                name: 'GITAM University',
+                description: <>B.Tech - Mechanical Engineering</>,
+            },
         ]
     },
     technical: {
@@ -126,32 +150,45 @@ const about = {
                 title: 'Figma',
                 description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
                 // optional: leave the array empty if you don't want to display images
+                images: [ ]
+            },
+            {
+                title: 'React and Next.js',
+                description: <>Building next gen apps with Next.js.</>,
+                // optional: leave the array empty if you don't want to display images
                 images: [
-                    {
-                        src: '/images/projects/project-01/cover-02.jpg',
-                        alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
-                    {
-                        src: '/images/projects/project-01/cover-03.jpg',
-                        alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
                 ]
             },
             {
-                title: 'Next.js',
-                description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+                title: 'Amplify',
+                description: <>Certified Host in AWS Amplify.</>,
                 // optional: leave the array empty if you don't want to display images
                 images: [
-                    {
-                        src: '/images/projects/project-01/cover-04.jpg',
-                        alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
+
+                ]
+            },
+            {
+                title: 'Angular.js',
+                description: <>Building next gen apps with Angular.js</>,
+                // optional: leave the array empty if you don't want to display images
+                images: [
+
+                ]
+            },
+            {
+                title: 'Tensorflow',
+                description: <>Building ml products and apps with TensorFlow.</>,
+                // optional: leave the array empty if you don't want to display images
+                images: [
+
+                ]
+            },
+            {
+                title: 'and many more...',
+                description: <>Check ouy my Github Profile for better understanding of my tech skills.</>,
+                // optional: leave the array empty if you don't want to display images
+                images: [
+
                 ]
             }
         ]
@@ -160,7 +197,7 @@ const about = {
 
 const blog = {
     label: 'Blog',
-    title: 'Writing about design and tech...',
+    title: 'Writing about lifestyle and tech...',
     description: `Read what ${person.name} has been up to recently`
     // Create new blog posts by adding a new .mdx file to app/blog/posts
     // All posts will be listed on the /blog route
@@ -180,76 +217,7 @@ const gallery = {
     description: `A photo collection by ${person.name}`,
     // Images from https://pexels.com
     images: [
-        { 
-            src: '/images/gallery/img-01.jpg', 
-            alt: 'image',
-            orientation: 'vertical'
-        },
-        { 
-            src: '/images/gallery/img-02.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-03.jpg', 
-            alt: 'image',
-            orientation: 'vertical'
-        },
-        { 
-            src: '/images/gallery/img-04.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-05.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-06.jpg', 
-            alt: 'image',
-            orientation: 'vertical'
-        },
-        { 
-            src: '/images/gallery/img-07.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-08.jpg', 
-            alt: 'image',
-            orientation: 'vertical'
-        },
-        { 
-            src: '/images/gallery/img-09.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-10.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-11.jpg', 
-            alt: 'image',
-            orientation: 'vertical'
-        },
-        { 
-            src: '/images/gallery/img-12.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-13.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-14.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
+
     ]
 }
 

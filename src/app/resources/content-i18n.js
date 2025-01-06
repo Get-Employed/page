@@ -2,15 +2,15 @@ import { InlineCode } from "@/once-ui/components";
 
 const createI18nContent = (t) => {
     const person = {
-        firstName: 'Selene',
-        lastName:  'Yu',
+        firstName: 'VVS Basanth',
+        lastName:  'Pedapati',
         get name() {
             return `${this.firstName} ${this.lastName}`;
         },
         role:      t("person.role"),
         avatar:    '/images/avatar.jpg',
-        location:  'Asia/Jakarta',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-        languages: ['English', 'Bahasa']  // optional: Leave the array empty if you don't want to display languages
+        location:  'Asia/Kolkata',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+        languages: ['English', 'Hindi', 'Telugu']  // optional: Leave the array empty if you don't want to display languages
     }
 
     const newsletter = {
@@ -25,12 +25,12 @@ const createI18nContent = (t) => {
         {
             name: 'GitHub',
             icon: 'github',
-            link: 'https://github.com/once-ui-system/nextjs-starter',
+            link: 'https://github.com/vvs-basanth',
         },
         {
             name: 'LinkedIn',
             icon: 'linkedin',
-            link: 'https://www.linkedin.com/company/once-ui/',
+            link: 'https://www.linkedin.com/in/vvs-basanth',
         },
         {
             name: 'X',
@@ -40,7 +40,7 @@ const createI18nContent = (t) => {
         {
             name: 'Email',
             icon: 'email',
-            link: 'mailto:example@gmail.com',
+            link: 'mailto:vvs.pedapati@gmail.com',
         },
     ]
 
@@ -65,7 +65,7 @@ const createI18nContent = (t) => {
         },
         calendar: {
             display: true,
-            link: 'https://cal.com'
+            link: 'https://calendar.notion.so/meet/vvsbasanth/m7k74lbz'
         },
         intro: {
             display: true,
@@ -77,24 +77,50 @@ const createI18nContent = (t) => {
             title: t("about.work.title"),
             experiences: [
                 {
-                    company: 'FLY',
-                    timeframe: t("about.work.experiences.FLY.timeframe"),
-                    role: t("about.work.experiences.FLY.role"),
-                    achievements: t("about.work.experiences.FLY.achievements").split(";"),
+                    company: 'Indian Navy',
+                    timeframe: '2024 - Present',
+                    role: 'Machine Learning Scientist (B)',
+                    achievements: [
+                        <>Working on the active Indian Navy Tech Projects</>,
+                    ],
                     images: [ // optional: leave the array empty if you don't want to display images
-                        {
-                            src: '/images/projects/project-01/cover-01.jpg',
-                            alt: 'Once UI Project',
-                            width: 16,
-                            height: 9
-                        }
                     ]
                 },
                 {
-                    company: 'Creativ3',
-                    timeframe: t("about.work.experiences.Creativ3.timeframe"),
-                    role: t("about.work.experiences.Creativ3.role"),
-                    achievements: t("about.work.experiences.Creativ3.achievements").split(";"),
+                    company: 'StellaX Technologies',
+                    timeframe: '2022 - Present',
+                    role: 'Founder',
+                    achievements: [
+                        <>Developed an innovative concept of an LLM model, which acts as a tool for automating tasks for software engineering.</>,
+                        <>Led a cross-functional team to launch a new product line.</>
+                    ],
+                    images: [ ]
+                },
+                {
+                    company: 'IBM Qiskit',
+                    timeframe: '2023 - 2024',
+                    role: 'Quantum - Machine Learning Engineer',
+                    achievements: [
+                        <>Developed an new machine learning algorithm and optimized the capabilities of Qiskit Framework and IBM - Quantum Computer.</>,
+                    ],
+                    images: [ ]
+                },
+                {
+                    company: 'Goldman Sachs',
+                    timeframe: '2023',
+                    role: 'New Summer Analyst (intern)',
+                    achievements: [
+                        <>Was part of a Reaseach team which was building a financial model and assisting senior bankers with deal execution.</>,
+                    ],
+                    images: [ ]
+                },
+                {
+                    company: 'Defence Research and Development Organisation',
+                    timeframe: '2023',
+                    role: 'Machine Learning Engineer (Intern)',
+                    achievements: [
+                        <>Was part of a team which does data preprocessing, model development and testing pipelines.</>
+                    ],
                     images: [ ]
                 }
             ]
@@ -104,13 +130,17 @@ const createI18nContent = (t) => {
             title: 'Studies',
             institutions: [
                 {
-                    name: 'University of Jakarta',
-                    description: <>{t(`about.studies.institutions.University of Jakarta.description`)}</>,
+                    name: 'Indian Institute of Sciences [ TATA Institute]',
+                    description: <>MSc - Quantum Simulations and Computing</>,
                 },
                 {
-                    name: 'Build the Future',
-                    description: <>{t("about.studies.institutions.Build the Future.description")}</>,
-                }
+                    name: 'Indian Institute of Technology - Madras [IIT Madras]',
+                    description: <>BSc (Hons.) - Physics (Hons.).</>,
+                },
+                {
+                    name: 'GITAM University',
+                    description: <>B.Tech - Mechanical Engineering</>,
+                },
             ]
         },
         technical: {
@@ -119,32 +149,47 @@ const createI18nContent = (t) => {
             skills: [
                 {
                     title: 'Figma',
-                    description: <>{t("about.technical.skills.Figma.description")}</>,
+                    description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+                    // optional: leave the array empty if you don't want to display images
+                    images: [ ]
+                },
+                {
+                    title: 'React and Next.js',
+                    description: <>Building next gen apps with Next.js.</>,
+                    // optional: leave the array empty if you don't want to display images
                     images: [
-                        {
-                            src: '/images/projects/project-01/cover-02.jpg',
-                            alt: 'Project image',
-                            width: 16,
-                            height: 9
-                        },
-                        {
-                            src: '/images/projects/project-01/cover-03.jpg',
-                            alt: 'Project image',
-                            width: 16,
-                            height: 9
-                        },
                     ]
                 },
                 {
-                    title: 'Next.js',
-                    description: <>{t("about.technical.skills.Nextjs.description")}</>, // "." not accepted in next-intl namespace
+                    title: 'Amplify',
+                    description: <>Certified Host in AWS Amplify.</>,
+                    // optional: leave the array empty if you don't want to display images
                     images: [
-                        {
-                            src: '/images/projects/project-01/cover-04.jpg',
-                            alt: 'Project image',
-                            width: 16,
-                            height: 9
-                        },
+
+                    ]
+                },
+                {
+                    title: 'Angular.js',
+                    description: <>Building next gen apps with Angular.js</>,
+                    // optional: leave the array empty if you don't want to display images
+                    images: [
+
+                    ]
+                },
+                {
+                    title: 'Tensorflow',
+                    description: <>Building ml products and apps with TensorFlow.</>,
+                    // optional: leave the array empty if you don't want to display images
+                    images: [
+
+                    ]
+                },
+                {
+                    title: 'and many more...',
+                    description: <>Check ouy my Github Profile for better understanding of my tech skills.</>,
+                    // optional: leave the array empty if you don't want to display images
+                    images: [
+
                     ]
                 }
             ]
@@ -172,78 +217,7 @@ const createI18nContent = (t) => {
         title: t("gallery.title"),
         description: t("gallery.description", {name: person.name}),
         // Images from https://pexels.com
-        images: [
-            {
-                src: '/images/gallery/img-01.jpg',
-                alt: 'image',
-                orientation: 'vertical'
-            },
-            {
-                src: '/images/gallery/img-02.jpg',
-                alt: 'image',
-                orientation: 'horizontal'
-            },
-            { 
-                src: '/images/gallery/img-03.jpg',
-                alt: 'image',
-                orientation: 'vertical'
-            },
-            { 
-                src: '/images/gallery/img-04.jpg',
-                alt: 'image',
-                orientation: 'horizontal'
-            },
-            {
-                src: '/images/gallery/img-05.jpg',
-                alt: 'image',
-                orientation: 'horizontal'
-            },
-            {
-                src: '/images/gallery/img-06.jpg',
-                alt: 'image',
-                orientation: 'vertical'
-            },
-            {
-                src: '/images/gallery/img-07.jpg',
-                alt: 'image',
-                orientation: 'horizontal'
-            },
-            {
-                src: '/images/gallery/img-08.jpg',
-                alt: 'image',
-                orientation: 'vertical'
-            },
-            {
-                src: '/images/gallery/img-09.jpg',
-                alt: 'image',
-                orientation: 'horizontal'
-            },
-            {
-                src: '/images/gallery/img-10.jpg',
-                alt: 'image',
-                orientation: 'horizontal'
-            },
-            { 
-                src: '/images/gallery/img-11.jpg',
-                alt: 'image',
-                orientation: 'vertical'
-            },
-            {
-                src: '/images/gallery/img-12.jpg',
-                alt: 'image',
-                orientation: 'horizontal'
-            },
-            {
-                src: '/images/gallery/img-13.jpg',
-                alt: 'image',
-                orientation: 'horizontal'
-            },
-            { 
-                src: '/images/gallery/img-14.jpg',
-                alt: 'image',
-                orientation: 'horizontal'
-            },
-        ]
+        images: []
     }
     return {
         person,
