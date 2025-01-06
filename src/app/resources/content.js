@@ -9,7 +9,7 @@ const person = {
     role:      'Computer Science Engineer',
     avatar:    '/images/avatar.jpg',
     location:  'Asia/Kolkata',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: ['English', 'Hindi', 'Telugu']  // optional: Leave the array empty if you don't want to display languages
+    languages: []  // optional: Leave the array empty if you don't want to display languages
 }
 
 const newsletter = {
@@ -47,7 +47,7 @@ const home = {
     label: 'Home',
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Design engineer and builder</>,
+    headline: <>Software Engineer</>,
     subline: <>I'm Basanth, a <InlineCode>Software Engineer</InlineCode>, where I build amazing<br/> things for the web. After hours, I teach programming.</>
 }
 
