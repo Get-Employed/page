@@ -2,8 +2,13 @@ import { Avatar, Button, Flex, Heading, Icon, IconButton, SmartImage, Tag, Text 
 import { baseURL, renderContent } from '@/app/resources';
 import TableOfContents from '@/components/about/TableOfContents';
 import styles from '@/components/about/about.module.scss'
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
+import {Link, routing} from '@/i18n/routing';
+ 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({locale}));
+}
 
 export async function generateMetadata(
     {params: {locale}}: { params: { locale: string }}
@@ -13,8 +18,6 @@ export async function generateMetadata(
 	const title = about.title;
 	const description = about.description;
 	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
-    // Await the requestLocale function and provide a fallback
-    const requestLocale = await unstable_setRequestLocale(locale) || 'en';
 
 	return {
 		title,
@@ -23,7 +26,7 @@ export async function generateMetadata(
 			title,
 			description,
 			type: 'website',
-			url: `https://${baseURL}/${requestLocale}/about`,
+			url: `https://${baseURL}/${locale}/about`,
 			images: [
 				{
 					url: ogImage,
@@ -37,15 +40,14 @@ export async function generateMetadata(
 			description,
 			images: [ogImage],
 		},
-        locale: requestLocale //Return the locale.
 	};
 }
 
 export default function About(
     { params: {locale}}: { params: { locale: string }}
 ) {
-    const requestLocale = await unstable_setRequestLocale(locale) || 'en';
-    const t = useTranslations();
+    setRequestLocale(locale);
+    const t = useTranslations('About');
     const {person, about, social } = renderContent(t);
     const structure = [
         { 
