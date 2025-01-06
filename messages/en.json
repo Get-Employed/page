@@ -25,15 +25,20 @@
         "work": {
             "title": "Work Experience",
             "experiences": {
-                "FLY": {
+                "Indian Navy": {
                     "timeframe": "2024 - Present",
                     "role": "Indian Navy",
-                    "achievements": "/."
+                    "achievements": ["Working on the active Indian Navy Tech Projects"]
                 },
-                "Creativ3": {
-                    "timeframe": "",
-                    "role": "",
-                    "achievements": "."
+                "StellaX Technologies": {
+                    "timeframe": "2022 - Present",
+                    "role": "Founder",
+                    "achievements": ["Developed an innovative concept of an LLM model, which acts as a tool for automating tasks for software engineering."]
+                },
+                "IBM Qiskit": {
+                    "timeframe": "2023 - 2024",
+                    "role": ["Quantum - Machine Learning Engineer"],
+                    "achievements": ["Developed an new machine learning algorithm and optimized the capabilities of Qiskit Framework and IBM - Quantum Computer."]
                 }
             }
         },
@@ -41,10 +46,10 @@
             "title": "Studies",
             "institutions": {
                 "GITAM University": {
-                    "description": "Studied Mechanical engineering."
+                    "description": ["Studied Mechanical engineering."]
                 },
-                "Build the Future": {
-                    "description": "."
+                "IIT Madras": {
+                    "description": ["Developed an new machine learning algorithm and optimized the capabilities of Qiskit Framework and IBM - Quantum Computer."]
                 }
             }
         },

@@ -1,245 +1,206 @@
-import { InlineCode } from "@/once-ui/components";
-
 const person = {
-    firstName: 'VVS Basanth',
-    lastName:  'Pedapati',
+    firstName: "VVS Basanth",
+    lastName: "Pedapati",
     get name() {
         return `${this.firstName} ${this.lastName}`;
     },
-    role:      'Computer Science Engineer',
-    avatar:    '/images/avatar.jpg',
-    location:  'Asia/Kolkata',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: []  // optional: Leave the array empty if you don't want to display languages
-}
+    role: "Computer Science Engineer",
+    avatar: "/images/avatar.jpg",
+    location: Intl.DateTimeFormat().resolvedOptions().timeZone, // Dynamically fetch timezone
+    languages: [], // Optional: Can be populated dynamically
+};
 
 const newsletter = {
     display: true,
-    title: <>Subscribe to {person.firstName}'s Newsletter</>,
-    description: <>I occasionally write about Lifestyle, technology, and share thoughts on the intersection of innovation and engineering.</>
-}
+    title: `Subscribe to ${person.firstName}'s Newsletter`,
+    description: "I occasionally write about lifestyle, technology, and share thoughts on the intersection of innovation and engineering.",
+};
 
 const social = [
-    // Links are automatically displayed.
-    // Import new icons in /once-ui/icons.ts
     {
-        name: 'GitHub',
-        icon: 'github',
-        link: 'https://github.com/vvs-basanth',
+        name: "GitHub",
+        icon: "github",
+        link: "https://github.com/vvs-basanth",
     },
     {
-        name: 'LinkedIn',
-        icon: 'linkedin',
-        link: 'https://www.linkedin.com/in/vvs-basanth/',
+        name: "LinkedIn",
+        icon: "linkedin",
+        link: "https://www.linkedin.com/in/vvs-basanth/",
     },
-    // {
-    //     name: 'X',
-    //     icon: 'x',
-    //     link: '',
-    // },
     {
-        name: 'Email',
-        icon: 'email',
-        link: 'mailto:vvs.pedapati@gmail.com',
+        name: "Email",
+        icon: "email",
+        link: "mailto:vvs.pedapati@gmail.com",
     },
-]
+];
 
 const home = {
-    label: 'Home',
+    label: "Home",
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Software Engineer</>,
-    subline: <>I'm Basanth, a <InlineCode>Software Engineer</InlineCode>, where I build amazing<br/> things for the web. After hours, I teach programming.</>
-}
+    headline: "Software Engineer",
+    subline: `I'm Basanth, a Software Engineer, where I build amazing things for the web. After hours, I teach programming.`,
+};
 
 const about = {
-    label: 'About',
-    title: 'About me',
+    label: "About",
+    title: "About me",
     description: `Meet ${person.name}, ${person.role} from ${person.location}`,
     tableOfContent: {
         display: true,
-        subItems: false
+        subItems: false,
     },
     avatar: {
-        display: true
+        display: true,
     },
     calendar: {
         display: true,
-        link: 'https://calendar.notion.so/meet/vvsbasanth/m7k74lbz'
+        link: "https://calendar.notion.so/meet/vvsbasanth/m7k74lbz",
     },
     intro: {
         display: true,
-        title: 'Introduction',
-        description: <>Basanth is a India-based software engineer with a passion towards machine learning and transforming complex challenges into simple, elegant software solutions. His work spans digital interfaces, innovative experiences, and the convergence of innovation and technology.</>
+        title: "Introduction",
+        description:
+            "Basanth is an India-based software engineer with a passion for machine learning and transforming complex challenges into simple, elegant software solutions. His work spans digital interfaces, innovative experiences, and the convergence of innovation and technology.",
     },
     work: {
-        display: true, // set to false to hide this section
-        title: 'Work Experience',
+        display: true,
+        title: "Work Experience",
         experiences: [
             {
-                company: 'Indian Navy',
-                timeframe: '2024 - Present',
-                role: 'Machine Learning Scientist (B)',
+                company: "Indian Navy",
+                timeframe: "2024 - Present",
+                role: "Machine Learning Scientist (B)",
                 achievements: [
-                    <>Working on the active Indian Navy Tech Projects</>,
+                    "Working on the active Indian Navy Tech Projects",
                 ],
-                images: [
-                    
-                ]
+                images: [],
             },
             {
-                company: 'StellaX Technologies',
-                timeframe: '2022 - Present',
-                role: 'Founder',
+                company: "StellaX Technologies",
+                timeframe: "2022 - Present",
+                role: "Founder",
                 achievements: [
-                    <>Developed an innovative concept of an LLM model, which acts as a tool for automating tasks for software engineering.</>,
-                    <>Led a cross-functional team to launch a new product line.</>
+                    "Developed an innovative concept of an LLM model, automating tasks for software engineering.",
+                    "Led a cross-functional team to launch a new product line.",
                 ],
                 images: [
                     {
-                        src: '/images/projects/project-01/cover-01.jpg',
-                        alt: 'Once UI Project',
+                        src: "/images/projects/project-01/cover-01.jpg",
+                        alt: "Once UI Project",
                         width: 16,
-                        height: 9
-                    }
-                ]
+                        height: 9,
+                    },
+                ],
             },
             {
-                company: 'IBM Qiskit',
-                timeframe: '2023 - 2024',
-                role: 'Quantum - Machine Learning Engineer',
+                company: "IBM Qiskit",
+                timeframe: "2023",
+                role: "Quantum Machine Learning Engineer",
                 achievements: [
-                    <>Developed an new machine learning algorithm and optimized the capabilities of Qiskit Framework and IBM - Quantum Computer.</>,
+                    "Worked in a team which maintained quantum machine learning model and setting up data pipelines to optimize the model for IBM Qiskit.",
                 ],
-                images: [ ]
+                images: [],
             },
             {
-                company: 'Goldman Sachs',
-                timeframe: '2023',
-                role: 'New Summer Analyst (intern)',
+                company: "GoldMan Sachs",
+                timeframe: "2022",
+                role: "New Summer Analyst (inter)",
                 achievements: [
-                    <>Was part of a Reaseach team which was building a financial model and assisting senior bankers with deal execution.</>,
+                    "Was part of a team which made a new trading algorithm for the company.",
+                    "Maintained the algorithm and optimized it for the company.",
                 ],
-                images: [ ]
-            },
-            {
-                company: 'Defence Research and Development Organisation',
-                timeframe: '2023',
-                role: 'Machine Learning Engineer (Intern)',
-                achievements: [
-                    <>Was part of a team which does data preprocessing, model development and testing pipelines.</>
-                ],
-                images: [ ]
+                images: [],
             }
-        ]
+        ],
     },
     studies: {
-        display: true, // set to false to hide this section
-        title: 'Studies',
+        display: true,
+        title: "Studies",
         institutions: [
             {
-                name: 'Indian Institute of Sciences [ TATA Institute]',
-                description: <>MSc - Quantum Simulations and Computing</>,
+                name: "Indian Institute of Sciences [TATA Institute]",
+                description: "MSc - Quantum Simulations and Computing",
             },
             {
-                name: 'Indian Institute of Technology - Madras [IIT Madras]',
-                description: <>BSc (Hons.) - Physics (Hons.).</>,
+                name: "Indian Institute of Technology - Madras [IIT Madras]",
+                description: "BSc (Hons.) - Physics",
             },
             {
-                name: 'GITAM University',
-                description: <>B.Tech - Mechanical Engineering</>,
+                name: "GITAM University",
+                description: "B.Tech - Mechanical Engineering",
             },
-        ]
+        ],
     },
     technical: {
-        display: true, // set to false to hide this section
-        title: 'Technical skills',
+        display: true,
+        title: "Technical skills",
         skills: [
             {
-                title: 'Figma',
-                description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-                // optional: leave the array empty if you don't want to display images
+                title: "Figma",
+                description: "Able to prototype in Figma with Once UI with unnatural speed.",
                 images: [
                     {
-                        src: '/images/projects/project-01/cover-02.jpg',
-                        alt: 'Project image',
+                        src: "/images/projects/project-01/cover-02.jpg",
+                        alt: "Figma Prototype",
                         width: 16,
-                        height: 9
+                        height: 9,
                     },
-                ]
+                ],
             },
             {
-                title: 'React and Next.js',
-                description: <>Building next gen apps with Next.js.</>,
-                // optional: leave the array empty if you don't want to display images
+                title: "React and Next.js",
+                description: "Building next-gen apps with Next.js.",
                 images: [
                     {
-                        src: '/images/projects/project-01/cover-03.jpg',
-                        alt: 'Project image',
+                        src: "/images/projects/project-01/cover-03.jpg",
+                        alt: "React and Next.js Project",
                         width: 16,
-                        height: 9
+                        height: 9,
                     },
-                ]
+                ],
             },
             {
-                title: 'Amplify',
-                description: <>Certified Host in AWS Amplify.</>,
-                // optional: leave the array empty if you don't want to display images
-                images: [
-
-                ]
+                title: "JAVA Programming",
+                description: "JAVA is my go-to language for most of my projects.",
+                images: [],
             },
             {
-                title: 'Angular.js',
-                description: <>Building next gen apps with Angular.js</>,
-                // optional: leave the array empty if you don't want to display images
-                images: [
-
-                ]
+                title: "Machine Learning",
+                description: "I have a strong background in machine learning.",
+                images: [],
             },
             {
-                title: 'Tensorflow',
-                description: <>Building ml products and apps with TensorFlow.</>,
-                // optional: leave the array empty if you don't want to display images
-                images: [
-
-                ]
+                title: "Quantum Computing",
+                description: "I have a strong background in quantum computing.",
+                images: [],
             },
             {
-                title: 'and many more...',
-                description: <>Check ouy my Github Profile for better understanding of my tech skills.</>,
-                // optional: leave the array empty if you don't want to display images
-                images: [
-
-                ]
+                title: "RUST Programming",
+                description: "I have a strong background in RUST programming.",
+                images: [],
             }
-        ]
-    }
-}
+        ],
+    },
+};
 
 const blog = {
-    label: 'Blog',
-    title: 'Writing about lifestyle and tech...',
-    description: `Read what ${person.name} has been up to recently`
-    // Create new blog posts by adding a new .mdx file to app/blog/posts
-    // All posts will be listed on the /blog route
-}
+    label: "Blog",
+    title: "Writing about lifestyle and tech...",
+    description: `Read what ${person.name} has been up to recently.`,
+};
 
 const work = {
-    label: 'Work',
-    title: 'My projects',
-    description: `Design and dev projects by ${person.name}`
-    // Create new project pages by adding a new .mdx file to app/blog/posts
-    // All projects will be listed on the /home and /work routes
-}
+    label: "Work",
+    title: "My projects",
+    description: `Design and dev projects by ${person.name}.`,
+};
 
 const gallery = {
-    label: 'Gallery',
-    title: 'My photo gallery',
-    description: `A photo collection by ${person.name}`,
-    // Images from https://pexels.com
-    images: [
+    label: "Gallery",
+    title: "My photo gallery",
+    description: `A photo collection by ${person.name}.`,
+    images: [], // Can be populated with actual photo data
+};
 
-    ]
-}
-
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work };

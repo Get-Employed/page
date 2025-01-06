@@ -258,7 +258,7 @@ export default function About(
                                         <Flex
                                             as="ul"
                                             direction="column" gap="16">
-                                            {experience.achievements.map((achievement: string, index: any) => (
+                                            {Array.isArray(experience.achievements) && experience.achievements.map((achievement: string, index: number) => (
                                                 <Text
                                                     as="li"
                                                     variant="body-default-m"
